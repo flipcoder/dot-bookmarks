@@ -21,7 +21,8 @@ unmark() {
     # TODO: remove mark from this file
 }
 
-alias ls@="cat ~/.bookmarks | grep -A 9999 -E \"^# BOOKMARKS\""
+alias @="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks | grep $(pwd)" # pwd for marks
+alias ls@="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks"
 alias vi@="vim ~/.bookmarks"
 alias u@="source ~/.bookmarks"
 
