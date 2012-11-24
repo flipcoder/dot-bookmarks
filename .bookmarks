@@ -17,10 +17,6 @@ mark() {
     echo "alias @$1=\"cd $(pwd)\"" >> ~/.bookmarks
 }
 
-unmark() {
-    # TODO: remove mark from this file
-}
-
 alias @="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks | grep $(pwd)" # pwd for marks
 alias ls@="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks"
 alias vi@="vim ~/.bookmarks"
