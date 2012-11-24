@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# to install, move this script to your home directory
+# and add this line to .bashrc or .zshrc:
+#     source ~/.bookmarks
+
+# to bookmark the current directory using name "blah":
+#     mark blah
+
+# to move to a directory bookmarked as "blah":
+#     @blah
+
+# to remove a bookmark, remove them from the end of this file
+
+mark() {
+    alias @$1="cd $(pwd)"
+    echo "alias @$1=\"cd $(pwd)\"" >> ~/.bookmarks
+}
+
+unmark() {
+    # TODO: remove mark from this file
+}
+
+alias ls@="cat ~/.bookmarks | grep -A 9999 -E \"^# BOOKMARKS\""
+alias vi@="vim ~/.bookmarks"
+alias u@="source ~/.bookmarks"
+
+# BOOKMARKS (bookmarks get added below this line)
