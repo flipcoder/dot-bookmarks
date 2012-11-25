@@ -17,7 +17,7 @@ mark() {
     echo "alias @$1=\"cd $(pwd)\"" >> ~/.bookmarks
 }
 
-#alias @="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks | grep $(pwd)" # TODO: pwd for marks
+alias @="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks | grep '\"cd $(pwd)\"'" # list current mark
 alias ls@="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks"
 alias vi@="vim ~/.bookmarks"
 alias u@="source ~/.bookmarks"
