@@ -9,7 +9,7 @@ mark() {
 
 alias @="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks | grep '\"cd $(pwd)\"'" # list current mark
 alias ls@="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks"
-alias vi@="vim ~/.bookmarks"
+alias vi@="$EDITOR ~/.bookmarks"
 alias u@="source ~/.bookmarks"
 
 # BOOKMARKS (bookmarks get added below this line)
