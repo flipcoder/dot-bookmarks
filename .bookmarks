@@ -1,20 +1,26 @@
 #!/bin/bash
 
-# to install, move this script to your home directory
+# to install, copy this script to your home directory
 # and add this line to .bashrc or .zshrc:
 #     source ~/.bookmarks
 
 # to bookmark the current directory using name "blah":
 #     mark blah
 
-# to move to a directory bookmarked as "blah":
+# to change to a directory bookmarked as "blah":
 #     @blah
+# to get a directory name as a variable, use:
+#     $_blah
+# example:
+#     mv file $_blah
 
 # to remove a bookmark, remove them from the end of this file
 
 mark() {
-    alias @$1="cd $(pwd)"
-    echo "alias @$1=\"cd $(pwd)\"" >> ~/.bookmarks
+    export _$1=$(pwd)
+    alias @$1="cd \$_$1"
+    echo "export _$1=$(pwd)" >> ~/.bookmarks
+    echo "alias @$1=\"cd \$_$1\"" >> ~/.bookmarks
 }
 
 alias @="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks | grep '\"cd $(pwd)\"'" # list current mark
