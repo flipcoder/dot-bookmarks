@@ -4,7 +4,7 @@ mark() {
     export _$1=$(pwd)
     alias @$1="cd \$_$1"
     echo "export _$1=$(pwd)" >> ~/.bookmarks
-    echo "alias @$1=\"cd \$_$1\"" >> ~/.bookmarks
+    echo "alias @$1=\"cd \'\$_$1\'\"" >> ~/.bookmarks
 }
 
 alias @="grep -A 9999 -E \"^# BOOKMARKS\" ~/.bookmarks | grep '\"cd $(pwd)\"'" # list current mark
